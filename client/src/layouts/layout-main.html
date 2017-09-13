@@ -1,0 +1,40 @@
+<template>
+  <require from="syncfusion-javascript/Content/ej/web/ej.widgets.core.bootstrap.min.css"></require>
+  <require from="syncfusion-javascript/Content/ej/web/bootstrap-theme/ej.theme.min.css"></require>
+  <require from="syncfusion-javascript/Content/ej/web/responsive-css/ej.responsive.css"></require>
+  <require from="bootstrap/css/bootstrap.css"></require>
+
+  <require from="sass/index.css"></require>
+  <require from="./nav-bar"></require>
+  <require from="../components/my-dialog"></require>
+  <require from="../components/my-drawer"></require>
+
+  <my-dialog></my-dialog>
+  <div class="desktop" id="desktop">
+
+
+    <div class="wrapper">
+      <my-drawer></my-drawer>
+      <nav-bar></nav-bar>
+      <div class="content"></div>
+    </div>
+
+  </div>
+  
+  <style>
+    .wrapper {
+      display: grid;
+      grid-template-columns: 244px 1fr;
+      grid-template-rows: auto auto;
+      background-color: #fff;
+      color: #444;
+    }
+
+    .content {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+  </style>
+</template>
+
+
