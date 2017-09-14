@@ -6,7 +6,7 @@ export class App {
   }
 
   attached() {
-      // $("#button").ejButton({
+    // $("#button").ejButton({
     //   size: "normal",
     //   showRoundedCorner: true,
     //   create: this.onCreate()
@@ -15,7 +15,7 @@ export class App {
   }
 
   openDialog() {
-    $("#dialog").ejDialog("open");
+
   }
 
   onCreate(args) {
@@ -31,7 +31,8 @@ export class App {
   slideMenuClick(e) {
     alert('test')
   }
-  onClientDragStop(e){
+
+  onClientDragStop(e) {
     console.log(e)
   }
 }
