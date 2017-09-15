@@ -65,9 +65,7 @@
             "name": "bootstrap",
             "path": "../node_modules/bootstrap/dist",
             "main": "js/bootstrap.min",
-            "deps": [
-              "jquery"
-            ],
+            "deps": ["jquery"],
             "exports": "$",
             "resources": [
               "css/bootstrap.css"
@@ -78,7 +76,7 @@
             "path": "../node_modules/aurelia-syncfusion-bridge/dist/amd",
             "main": "index",
             "resources": [
-              "**/*.js"
+              "grid/*.js"
             ]
           },
           {
@@ -117,13 +115,7 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
-          "text",
-          {
-            "name": "jquery-ui",
-            "main": "ui/widget.js",
-            "path": "../node_modules/jquery-ui",
-            "resources": []
-          }
+          "text"
         ]
       }
     ],
@@ -131,9 +123,9 @@
       "./assets/**/*": "../dist",
       "node_modules/syncfusion-javascript/Content/ej/web/common-images/**/*": "common-images",
       "node_modules/syncfusion-javascript/Content/ej/web/bootstrap-theme/images/**": "images",
-      "img/**/*": "img",
-      "locales/**/*": "locales",
-      "fonts/**/*": "fonts"
+      "img/**/*":"img",
+      "locales/**/*":"locales",
+      "fonts/**/*":"fonts"
     },
     "loader": {
       "type": "require",

@@ -8,14 +8,13 @@ export class WindowManager {
       id = e.ID;
       name = e.events.text;
       //Get main div
-
       let divDialog = $('#dialog' + id)
-      if (divDialog.length) {
-        console.log('old')
-        divDialog.ejDialog("open");
 
+      //If exits then open
+      if (divDialog.length) {
+        divDialog.ejDialog("open");
       } else {
-        console.log('new')
+        //Create new
         let main = $('#dialogs');
         console.log(main)
         $('<div />', {
@@ -23,7 +22,7 @@ export class WindowManager {
           title: name
         }).appendTo(main);
         let divDialog = $('#dialog' + id)
-        divDialog.ejDialog({showOnInit: true});
+        divDialog.ejDialog({showOnInit: true, containment: '#desktop'});
       }
     }
   }

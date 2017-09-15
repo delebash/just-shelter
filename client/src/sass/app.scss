@@ -1,7 +1,17 @@
-.sf-button {
-  background-image: url( '../../images/Computer-Desktop.png' );
-  width : 45px;
-  height : 45px;
-  border-style: none;
-  background-repeat: no-repeat;
+section {
+  margin: 10px 10px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 60px 64px 1fr 140px;
+  //grid-template-columns: 60px 64px 1fr 140px;
+  grid-template-rows: auto auto;
+  background-color: #7a98ff;
+  color: #ff6885;
+}
+
+.content {
+  grid-column: 1 / span 4;
+  grid-row: 2;
 }

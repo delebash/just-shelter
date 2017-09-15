@@ -6,33 +6,15 @@
 
   <require from="sass/index.css"></require>
   <require from="./nav-bar"></require>
-  <require from="../components/my-dialog"></require>
   <require from="../components/my-drawer"></require>
 
-
   <div class="desktop" id="desktop">
+
     <div class="wrapper">
-      <my-drawer></my-drawer>
-      <nav-bar></nav-bar>
-      <div id="dialogs"></div>
+      <my-drawer router.bind="router"></my-drawer>
+      <img src="images/funnyanimal.png" height="40px" width="65px">
     </div>
 
+    <router-view></router-view>
   </div>
-
-  <style>
-    .wrapper {
-      display: grid;
-      grid-template-columns: 244px 1fr;
-      grid-template-rows: auto auto;
-      background-color: #fff;
-      color: #444;
-    }
-
-    .content {
-      grid-column: 1 / span 2;
-      grid-row: 2;
-    }
-  </style>
 </template>
-
-

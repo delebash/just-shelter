@@ -1,5 +1,65 @@
 <template>
-  <ul id="topMenu"></ul>
+  <require from="syncfusion-javascript/Content/ej/web/ej.widgets.core.bootstrap.min.css"></require>
+  <require from="syncfusion-javascript/Content/ej/web/bootstrap-theme/ej.theme.min.css"></require>
+  <require from="syncfusion-javascript/Content/ej/web/responsive-css/ej.responsive.css"></require>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="navbar-brand icon-target" id="target"></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto" id="topMenu">
+        <li repeat.for="row of router.navigation">
+          <a href.bind="row.href">${row.title}</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div id="navigationDrawer">
+    <ul>
+      <li repeat.for="row of router.navigation" data-ej-imageclass="e-icon e-home" data-ej-text=${row.title}
+          data-ej-navigateurl="${row.href}">
+      </li>
+    </ul>
+  </div>
+  <style>
+    [class*="icon-"] {
+      background-image: url("../../images/hambuger menu.png");
+    }
+
+
+    #navigationDrawer[class*='icon-'] {
+      width: 35px;
+      height: 35px;
+    }
+
+    .icon-home {
+      background-position: 0 0;
+    }
+
+    .icon-target {
+      background-position: 0 -338px;
+      font-size: 34px;
+      height: 30px;
+      position: relative;
+      text-indent: 50px;
+      top: 4px;
+      width: 48px;
+      z-index: 3;
+    }
+
+    body {
+      background: none repeat scroll 0 0 whitesmoke;
+    }
+  </style>
 </template>
 
 

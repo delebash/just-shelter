@@ -1,24 +1,29 @@
-import {WindowManager} from '../services/window-manager'
-import {inject} from 'aurelia-framework'
-import topMenuItems from '../services/topMenuItems'
+import {customElement, bindable} from 'aurelia-framework';
+import {Router} from 'aurelia-router';
 
-@inject(WindowManager)
+let data = []
+
+@customElement('nav-bar')
 export class NavBar {
+  @bindable router;
 
-  constructor(windowmanager) {
-    this.windowmanager = windowmanager
+  configureRouter(config, router) {
+    this.router = router;
+  }
+
+  constructor() {
   }
 
   attached() {
-
-    $("#topMenu").ejMenu({
-      click: this.windowmanager.openWindow,
-      fields: {
-        dataSource: topMenuItems, id: "id", parentId: "parentId", text: "text",
-        spriteCssClass: "sprite"
-      }
-    });
+    $("#navigationDrawer").ejNavigationDrawer({ targetId: "target", type: "overlay", direction: "left", enableListView: true, listViewSettings: { width: 200, selectedItemIndex: 0, mouseUp: "slideMenuClick", persistSelection: false }, position: "normal" });
+    $("#topMenu").ejMenu({ width: 860, height: 34 });
   }
-
+  slideMenuClick(e) {
+    alert('test')
+  }
 }
 
+function slideMenuClick(e) {
+  alert('test')
+  // $("#navigationDrawer").ejNavigationDrawer("close");
+}
